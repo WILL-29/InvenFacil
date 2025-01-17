@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TbModelo = new System.Windows.Forms.TextBox();
             this.LbModelo = new System.Windows.Forms.Label();
             this.LbMarca = new System.Windows.Forms.Label();
@@ -42,17 +43,19 @@
             this.LbTipoArticulo = new System.Windows.Forms.Label();
             this.TbNombreArticulo = new System.Windows.Forms.TextBox();
             this.LbNombreArticulo = new System.Windows.Forms.Label();
-            this.BtCancelar = new System.Windows.Forms.Button();
+            this.BtLimpiar = new System.Windows.Forms.Button();
             this.BtGuardarArticulo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TbIdArticulo = new System.Windows.Forms.TextBox();
             this.LbIdArticulo = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbTipoArticulo = new System.Windows.Forms.ComboBox();
             this.CbMarca = new System.Windows.Forms.ComboBox();
             this.LbModificadoPor = new System.Windows.Forms.Label();
             this.TbModificadoPor = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PbArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TbModelo
@@ -83,6 +86,7 @@
             // 
             // BtBuscar
             // 
+            this.BtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtBuscar.Location = new System.Drawing.Point(262, 442);
             this.BtBuscar.Name = "BtBuscar";
             this.BtBuscar.Size = new System.Drawing.Size(80, 24);
@@ -93,6 +97,7 @@
             // 
             // BtReporte
             // 
+            this.BtReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtReporte.Location = new System.Drawing.Point(360, 442);
             this.BtReporte.Name = "BtReporte";
             this.BtReporte.Size = new System.Drawing.Size(80, 24);
@@ -108,6 +113,7 @@
             this.BtFotoAriticulo.TabIndex = 44;
             this.BtFotoAriticulo.Text = "Seleccionar foto";
             this.BtFotoAriticulo.UseVisualStyleBackColor = true;
+            this.BtFotoAriticulo.Click += new System.EventHandler(this.BtFotoAriticulo_Click);
             // 
             // PbArticulo
             // 
@@ -178,14 +184,16 @@
             this.LbNombreArticulo.TabIndex = 35;
             this.LbNombreArticulo.Text = "Nombre del artículo";
             // 
-            // BtCancelar
+            // BtLimpiar
             // 
-            this.BtCancelar.Location = new System.Drawing.Point(461, 442);
-            this.BtCancelar.Name = "BtCancelar";
-            this.BtCancelar.Size = new System.Drawing.Size(80, 24);
-            this.BtCancelar.TabIndex = 34;
-            this.BtCancelar.Text = "Cancelar";
-            this.BtCancelar.UseVisualStyleBackColor = true;
+            this.BtLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtLimpiar.Location = new System.Drawing.Point(461, 442);
+            this.BtLimpiar.Name = "BtLimpiar";
+            this.BtLimpiar.Size = new System.Drawing.Size(80, 24);
+            this.BtLimpiar.TabIndex = 34;
+            this.BtLimpiar.Text = "Limpiar";
+            this.BtLimpiar.UseVisualStyleBackColor = true;
+            this.BtLimpiar.Click += new System.EventHandler(this.BtLimpiar_Click);
             // 
             // BtGuardarArticulo
             // 
@@ -209,6 +217,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(829, 421);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TbIdArticulo
@@ -228,13 +237,13 @@
             this.LbIdArticulo.TabIndex = 53;
             this.LbIdArticulo.Text = "ID Artículo";
             // 
-            // comboBox1
+            // CbTipoArticulo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 55;
+            this.CbTipoArticulo.FormattingEnabled = true;
+            this.CbTipoArticulo.Location = new System.Drawing.Point(110, 63);
+            this.CbTipoArticulo.Name = "CbTipoArticulo";
+            this.CbTipoArticulo.Size = new System.Drawing.Size(130, 21);
+            this.CbTipoArticulo.TabIndex = 55;
             // 
             // CbMarca
             // 
@@ -261,6 +270,10 @@
             this.TbModificadoPor.Size = new System.Drawing.Size(130, 20);
             this.TbModificadoPor.TabIndex = 58;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +283,7 @@
             this.Controls.Add(this.TbModificadoPor);
             this.Controls.Add(this.LbModificadoPor);
             this.Controls.Add(this.CbMarca);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CbTipoArticulo);
             this.Controls.Add(this.TbIdArticulo);
             this.Controls.Add(this.LbIdArticulo);
             this.Controls.Add(this.TbModelo);
@@ -287,7 +300,7 @@
             this.Controls.Add(this.LbTipoArticulo);
             this.Controls.Add(this.TbNombreArticulo);
             this.Controls.Add(this.LbNombreArticulo);
-            this.Controls.Add(this.BtCancelar);
+            this.Controls.Add(this.BtLimpiar);
             this.Controls.Add(this.BtGuardarArticulo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
@@ -295,6 +308,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbArticulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,15 +329,16 @@
         private System.Windows.Forms.Label LbTipoArticulo;
         private System.Windows.Forms.TextBox TbNombreArticulo;
         private System.Windows.Forms.Label LbNombreArticulo;
-        private System.Windows.Forms.Button BtCancelar;
+        private System.Windows.Forms.Button BtLimpiar;
         private System.Windows.Forms.Button BtGuardarArticulo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox TbIdArticulo;
         private System.Windows.Forms.Label LbIdArticulo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbTipoArticulo;
         private System.Windows.Forms.ComboBox CbMarca;
         private System.Windows.Forms.Label LbModificadoPor;
         private System.Windows.Forms.TextBox TbModificadoPor;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
