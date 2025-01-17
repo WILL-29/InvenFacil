@@ -59,8 +59,8 @@ namespace InvenFacil
             {
                 TbIdArticulo.Text = dataGridView1.Rows[n].Cells[0].Value.ToString();
                 TbNombreArticulo.Text = dataGridView1.Rows[n].Cells[1].Value.ToString();
-                CbTipoArticulo.Text = dataGridView1.Rows[n].Cells[2].Value.ToString();
-                CbMarca.Text = dataGridView1.Rows[n].Cells[3].Value.ToString();
+                CbTipoArticulo.SelectedValue = Convert.ToInt32(dataGridView1.Rows[n].Cells[2].Value);                
+                CbMarca.SelectedValue = Convert.ToInt32(dataGridView1.Rows[n].Cells[3].Value);
                 TbModelo.Text = dataGridView1.Rows[n].Cells[4].Value.ToString();
                 TbSerial.Text = dataGridView1.Rows[n].Cells[5].Value.ToString();               
                 TbCantidad.Text = dataGridView1.Rows[n].Cells[6].Value.ToString();
@@ -104,7 +104,7 @@ namespace InvenFacil
                     errorProvider1.SetError(TbCantidad, "Solo debe introducir números");
                 else if (TbNombreArticulo.Text == "" || CbTipoArticulo.Text == "" || CbMarca.Text == "" || TbModelo.Text == "" || TbSerial.Text == "" || PbArticulo.Image == null)
                 {
-                    MessageBox.Show("Debe llenar todos los campos necesarios", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe llenar todos los campos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -147,10 +147,10 @@ namespace InvenFacil
                 {
                     ((PictureBox)c).Image = null;
                 }
-                else if (c is ComboBox)
-                {
-                    ((ComboBox)c).Text = string.Empty;
-                }
+                //else if (c is ComboBox)
+                //{
+                //    ((ComboBox)c).Text = string.Empty;
+                //}
             }
         }
         private void BtLimpiar_Click(object sender, EventArgs e)
