@@ -53,6 +53,7 @@
             this.LbModificadoPor = new System.Windows.Forms.Label();
             this.TbModificadoPor = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BtEliminarArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -98,7 +99,7 @@
             // BtReporte
             // 
             this.BtReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtReporte.Location = new System.Drawing.Point(360, 442);
+            this.BtReporte.Location = new System.Drawing.Point(434, 442);
             this.BtReporte.Name = "BtReporte";
             this.BtReporte.Size = new System.Drawing.Size(80, 24);
             this.BtReporte.TabIndex = 45;
@@ -187,7 +188,7 @@
             // BtLimpiar
             // 
             this.BtLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtLimpiar.Location = new System.Drawing.Point(461, 442);
+            this.BtLimpiar.Location = new System.Drawing.Point(535, 442);
             this.BtLimpiar.Name = "BtLimpiar";
             this.BtLimpiar.Size = new System.Drawing.Size(80, 24);
             this.BtLimpiar.TabIndex = 34;
@@ -274,12 +275,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // BtEliminarArt
+            // 
+            this.BtEliminarArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtEliminarArt.Location = new System.Drawing.Point(348, 442);
+            this.BtEliminarArt.Name = "BtEliminarArt";
+            this.BtEliminarArt.Size = new System.Drawing.Size(80, 24);
+            this.BtEliminarArt.TabIndex = 59;
+            this.BtEliminarArt.Text = "Eliminar";
+            this.BtEliminarArt.UseVisualStyleBackColor = true;
+            this.BtEliminarArt.Click += new System.EventHandler(this.BtEliminarArt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1103, 472);
+            this.Controls.Add(this.BtEliminarArt);
             this.Controls.Add(this.TbModificadoPor);
             this.Controls.Add(this.LbModificadoPor);
             this.Controls.Add(this.CbMarca);
@@ -339,6 +352,7 @@
         private System.Windows.Forms.Label LbModificadoPor;
         private System.Windows.Forms.TextBox TbModificadoPor;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button BtEliminarArt;
     }
 }
 

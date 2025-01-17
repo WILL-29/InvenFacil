@@ -165,5 +165,25 @@ namespace InvenFacil
             RutaFotoArt = file.FileName;
             PbArticulo.ImageLocation = RutaFotoArt;
         }
+
+        private void BtEliminarArt_Click(object sender, EventArgs e)
+        {
+            if (TbIdArticulo.Text == "")
+            {
+                MessageBox.Show("No ha seleccionado ningún registor para eliminar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int Id = Convert.ToInt32(TbIdArticulo.Text);
+                var EliminaArt = db.TblArticulos.FirstOrDefault(a => a.IdArticulo == Id);
+                if (EliminaArt != null)
+                {
+                    db.TblArticulos.Remove(EliminaArt);
+                    db.SaveChanges();
+                    MessageBox.Show("El artículo se ha eliminado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar(this);
+                }            
+            }
+        }
     }
 }
