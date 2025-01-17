@@ -1,0 +1,15 @@
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\InvenFacil.exe.config
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\InvenFacil.exe
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\InvenFacil.pdb
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\EntityFramework.dll
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\EntityFramework.xml
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csprojAssemblyReference.cache
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.Form1.resources
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.Properties.Resources.resources
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csproj.GenerateResource.cache
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csproj.CoreCompileInputs.cache
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csproj.CopyComplete
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.exe
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.pdb

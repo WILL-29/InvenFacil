@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InvenFacilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblArticulos">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreArticulo" Type="varchar" MaxLength="100" />
+    <Property Name="IdTipoArticulo" Type="int" />
+    <Property Name="IdMarca" Type="int" />
+    <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Foto" Type="varbinary(max)" />
+    <Property Name="IdUsuarioUltimaModificación" Type="int" />
+  </EntityType>
+  <EntityType Name="TblAuditoria">
+    <Key>
+      <PropertyRef Name="IdAuditoria" />
+    </Key>
+    <Property Name="IdAuditoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="AccionRealizada" Type="nvarchar" MaxLength="150" />
+    <Property Name="IdEmpleadoAfectado" Type="int" />
+  </EntityType>
+  <EntityType Name="TblEstadoUsuarios">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblMarcas">
+    <Key>
+      <PropertyRef Name="IdMarca" />
+    </Key>
+    <Property Name="IdMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblPerfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblTipoArticulo">
+    <Key>
+      <PropertyRef Name="IdTipoArticulo" />
+    </Key>
+    <Property Name="IdTipoArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoArticulo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblUsuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="IdPerfil" Type="int" />
+    <Property Name="IdEstado" Type="int" />
+    <Property Name="FechaExpiracionPassword" Type="datetime" />
+    <Property Name="FechaRegistro" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__TblArticu__IdMar__52593CB8">
+    <End Role="TblMarcas" Type="Self.TblMarcas" Multiplicity="0..1" />
+    <End Role="TblArticulos" Type="Self.TblArticulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblMarcas">
+        <PropertyRef Name="IdMarca" />
+      </Principal>
+      <Dependent Role="TblArticulos">
+        <PropertyRef Name="IdMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblArticu__IdTip__5165187F">
+    <End Role="TblTipoArticulo" Type="Self.TblTipoArticulo" Multiplicity="0..1" />
+    <End Role="TblArticulos" Type="Self.TblArticulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblTipoArticulo">
+        <PropertyRef Name="IdTipoArticulo" />
+      </Principal>
+      <Dependent Role="TblArticulos">
+        <PropertyRef Name="IdTipoArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblAudito__IdEmp__4CA06362">
+    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="0..1" />
+    <End Role="TblAuditoria" Type="Self.TblAuditoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="TblAuditoria">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblAudito__IdEmp__4E88ABD4">
+    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="0..1" />
+    <End Role="TblAuditoria" Type="Self.TblAuditoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="TblAuditoria">
+        <PropertyRef Name="IdEmpleadoAfectado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblEmplea__IdEst__49C3F6B7">
+    <End Role="TblEstadoUsuarios" Type="Self.TblEstadoUsuarios" Multiplicity="0..1" />
+    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblEstadoUsuarios">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="TblUsuarios">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblEmplea__IdPer__48CFD27E">
+    <End Role="TblPerfiles" Type="Self.TblPerfiles" Multiplicity="0..1" />
+    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblPerfiles">
+        <PropertyRef Name="IdPerfil" />
+      </Principal>
+      <Dependent Role="TblUsuarios">
+        <PropertyRef Name="IdPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblArticulos_TblUsuarios">
+    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="0..1" />
+    <End Role="TblArticulos" Type="Self.TblArticulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUsuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="TblArticulos">
+        <PropertyRef Name="IdUsuarioUltimaModificación" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InvenFacilModelStoreContainer">
+    <EntitySet Name="TblArticulos" EntityType="Self.TblArticulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAuditoria" EntityType="Self.TblAuditoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEstadoUsuarios" EntityType="Self.TblEstadoUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMarcas" EntityType="Self.TblMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblPerfiles" EntityType="Self.TblPerfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblTipoArticulo" EntityType="Self.TblTipoArticulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUsuarios" EntityType="Self.TblUsuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TblArticu__IdMar__52593CB8" Association="Self.FK__TblArticu__IdMar__52593CB8">
+      <End Role="TblMarcas" EntitySet="TblMarcas" />
+      <End Role="TblArticulos" EntitySet="TblArticulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblArticu__IdTip__5165187F" Association="Self.FK__TblArticu__IdTip__5165187F">
+      <End Role="TblTipoArticulo" EntitySet="TblTipoArticulo" />
+      <End Role="TblArticulos" EntitySet="TblArticulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblAudito__IdEmp__4CA06362" Association="Self.FK__TblAudito__IdEmp__4CA06362">
+      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+      <End Role="TblAuditoria" EntitySet="TblAuditoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblAudito__IdEmp__4E88ABD4" Association="Self.FK__TblAudito__IdEmp__4E88ABD4">
+      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+      <End Role="TblAuditoria" EntitySet="TblAuditoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblEmplea__IdEst__49C3F6B7" Association="Self.FK__TblEmplea__IdEst__49C3F6B7">
+      <End Role="TblEstadoUsuarios" EntitySet="TblEstadoUsuarios" />
+      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblEmplea__IdPer__48CFD27E" Association="Self.FK__TblEmplea__IdPer__48CFD27E">
+      <End Role="TblPerfiles" EntitySet="TblPerfiles" />
+      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblArticulos_TblUsuarios" Association="Self.FK_TblArticulos_TblUsuarios">
+      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
+      <End Role="TblArticulos" EntitySet="TblArticulos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

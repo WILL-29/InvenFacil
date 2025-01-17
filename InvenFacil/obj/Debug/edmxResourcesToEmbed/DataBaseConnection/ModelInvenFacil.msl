@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InvenFacilModelStoreContainer" CdmEntityContainer="InvenFacilEntities">
+    <EntitySetMapping Name="TblArticulos">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblArticulo">
+        <MappingFragment StoreEntitySet="TblArticulos">
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+          <ScalarProperty Name="NombreArticulo" ColumnName="NombreArticulo" />
+          <ScalarProperty Name="IdTipoArticulo" ColumnName="IdTipoArticulo" />
+          <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="IdUsuarioUltimaModificación" ColumnName="IdUsuarioUltimaModificación" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAuditorias">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblAuditoria">
+        <MappingFragment StoreEntitySet="TblAuditoria">
+          <ScalarProperty Name="IdAuditoria" ColumnName="IdAuditoria" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="AccionRealizada" ColumnName="AccionRealizada" />
+          <ScalarProperty Name="IdEmpleadoAfectado" ColumnName="IdEmpleadoAfectado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEstadoUsuarios">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblEstadoUsuario">
+        <MappingFragment StoreEntitySet="TblEstadoUsuarios">
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMarcas">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblMarca">
+        <MappingFragment StoreEntitySet="TblMarcas">
+          <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPerfiles">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblPerfile">
+        <MappingFragment StoreEntitySet="TblPerfiles">
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblTipoArticuloes">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblTipoArticulo">
+        <MappingFragment StoreEntitySet="TblTipoArticulo">
+          <ScalarProperty Name="IdTipoArticulo" ColumnName="IdTipoArticulo" />
+          <ScalarProperty Name="TipoArticulo" ColumnName="TipoArticulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUsuarios">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblUsuario">
+        <MappingFragment StoreEntitySet="TblUsuarios">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="FechaExpiracionPassword" ColumnName="FechaExpiracionPassword" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
