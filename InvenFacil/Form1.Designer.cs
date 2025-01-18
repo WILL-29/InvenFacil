@@ -66,7 +66,7 @@
             this.TbModelo.Location = new System.Drawing.Point(110, 117);
             this.TbModelo.Name = "TbModelo";
             this.TbModelo.Size = new System.Drawing.Size(130, 20);
-            this.TbModelo.TabIndex = 52;
+            this.TbModelo.TabIndex = 4;
             // 
             // LbModelo
             // 
@@ -93,7 +93,7 @@
             this.BtBuscar.Location = new System.Drawing.Point(262, 439);
             this.BtBuscar.Name = "BtBuscar";
             this.BtBuscar.Size = new System.Drawing.Size(80, 24);
-            this.BtBuscar.TabIndex = 46;
+            this.BtBuscar.TabIndex = 8;
             this.BtBuscar.Text = "Buscar";
             this.BtBuscar.UseVisualStyleBackColor = true;
             this.BtBuscar.Click += new System.EventHandler(this.button5_Click);
@@ -135,7 +135,7 @@
             this.TbCantidad.Location = new System.Drawing.Point(110, 169);
             this.TbCantidad.Name = "TbCantidad";
             this.TbCantidad.Size = new System.Drawing.Size(130, 20);
-            this.TbCantidad.TabIndex = 42;
+            this.TbCantidad.TabIndex = 6;
             // 
             // LbCantidad
             // 
@@ -152,7 +152,7 @@
             this.TbSerial.Location = new System.Drawing.Point(110, 143);
             this.TbSerial.Name = "TbSerial";
             this.TbSerial.Size = new System.Drawing.Size(130, 20);
-            this.TbSerial.TabIndex = 40;
+            this.TbSerial.TabIndex = 5;
             // 
             // LbSerial
             // 
@@ -177,7 +177,7 @@
             this.TbNombreArticulo.Location = new System.Drawing.Point(110, 38);
             this.TbNombreArticulo.Name = "TbNombreArticulo";
             this.TbNombreArticulo.Size = new System.Drawing.Size(130, 20);
-            this.TbNombreArticulo.TabIndex = 36;
+            this.TbNombreArticulo.TabIndex = 1;
             // 
             // LbNombreArticulo
             // 
@@ -248,7 +248,7 @@
             this.CbTipoArticulo.Location = new System.Drawing.Point(110, 63);
             this.CbTipoArticulo.Name = "CbTipoArticulo";
             this.CbTipoArticulo.Size = new System.Drawing.Size(130, 21);
-            this.CbTipoArticulo.TabIndex = 55;
+            this.CbTipoArticulo.TabIndex = 2;
             // 
             // CbMarca
             // 
@@ -256,7 +256,7 @@
             this.CbMarca.Location = new System.Drawing.Point(110, 90);
             this.CbMarca.Name = "CbMarca";
             this.CbMarca.Size = new System.Drawing.Size(130, 21);
-            this.CbMarca.TabIndex = 56;
+            this.CbMarca.TabIndex = 3;
             // 
             // LbModificadoPor
             // 
@@ -299,7 +299,7 @@
             this.CbModificado.Location = new System.Drawing.Point(110, 195);
             this.CbModificado.Name = "CbModificado";
             this.CbModificado.Size = new System.Drawing.Size(130, 21);
-            this.CbModificado.TabIndex = 61;
+            this.CbModificado.TabIndex = 7;
             // 
             // Form1
             // 

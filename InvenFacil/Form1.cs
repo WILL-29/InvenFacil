@@ -28,11 +28,7 @@ namespace InvenFacil
         //Variables globales y objetos que se usarán varias veces
         InvenFacilEntities db = new InvenFacilEntities();
         string RutaFotoArt;
-        //int UsuarioActivo = 1; 
-        //UsuarioActivo = Globales.GlobalVariables.GlobalUsuarioActivo;
-                        
 
-        // Llenar Comboboxes artículos
         private void LlenarComboBoxesArticulo()
         {
                 var TiposArticulo = db.TblTipoArticuloes

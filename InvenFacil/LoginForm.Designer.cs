@@ -38,8 +38,10 @@
             // 
             // TbPass
             // 
+            this.TbPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TbPass.Location = new System.Drawing.Point(126, 83);
             this.TbPass.Name = "TbPass";
+            this.TbPass.PasswordChar = '*';
             this.TbPass.Size = new System.Drawing.Size(130, 20);
             this.TbPass.TabIndex = 56;
             // 

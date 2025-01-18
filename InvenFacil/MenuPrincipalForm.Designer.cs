@@ -39,7 +39,7 @@
             this.BtModuloUsuarios.Location = new System.Drawing.Point(23, 30);
             this.BtModuloUsuarios.Name = "BtModuloUsuarios";
             this.BtModuloUsuarios.Size = new System.Drawing.Size(188, 23);
-            this.BtModuloUsuarios.TabIndex = 0;
+            this.BtModuloUsuarios.TabIndex = 1;
             this.BtModuloUsuarios.Text = "Administración de usuarios";
             this.BtModuloUsuarios.UseVisualStyleBackColor = true;
             this.BtModuloUsuarios.Click += new System.EventHandler(this.button1_Click);
@@ -49,7 +49,7 @@
             this.BtModuloAlmacen.Location = new System.Drawing.Point(23, 83);
             this.BtModuloAlmacen.Name = "BtModuloAlmacen";
             this.BtModuloAlmacen.Size = new System.Drawing.Size(188, 23);
-            this.BtModuloAlmacen.TabIndex = 1;
+            this.BtModuloAlmacen.TabIndex = 2;
             this.BtModuloAlmacen.Text = "Módulo de almacén";
             this.BtModuloAlmacen.UseVisualStyleBackColor = true;
             this.BtModuloAlmacen.Click += new System.EventHandler(this.BtModuloAlmacen_Click);
@@ -59,7 +59,7 @@
             this.BtConsultas.Location = new System.Drawing.Point(23, 131);
             this.BtConsultas.Name = "BtConsultas";
             this.BtConsultas.Size = new System.Drawing.Size(188, 23);
-            this.BtConsultas.TabIndex = 2;
+            this.BtConsultas.TabIndex = 3;
             this.BtConsultas.Text = "Solo consultas";
             this.BtConsultas.UseVisualStyleBackColor = true;
             this.BtConsultas.Click += new System.EventHandler(this.button1_Click_1);
