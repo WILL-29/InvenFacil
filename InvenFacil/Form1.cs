@@ -22,6 +22,8 @@ namespace InvenFacil
         private void Form1_Load(object sender, EventArgs e)
         {
             LlenarComboBoxesArticulo();
+            CbModificado.SelectedValue = Globales.GlobalVariables.GlobalUsuarioActivo;
+            //Limpiar(this);
         }
         //Variables globales y objetos que se usarán varias veces
         InvenFacilEntities db = new InvenFacilEntities();
@@ -159,7 +161,7 @@ namespace InvenFacil
                 else if (c is PictureBox)
                 {
                     ((PictureBox)c).Image = null;
-                }
+                }                
                 //else if (c is ComboBox)
                 //{
                 //    ((ComboBox)c).Text = string.Empty;
@@ -229,6 +231,11 @@ namespace InvenFacil
                 Limpiar(this);
                 MessageBox.Show("Nuevo artículo registrado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void BtReporte_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

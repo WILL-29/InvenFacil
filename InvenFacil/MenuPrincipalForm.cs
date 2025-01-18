@@ -23,7 +23,7 @@ namespace InvenFacil
             {
                 UsuariosForm usuariosform = new UsuariosForm();
                 usuariosform.Show();
-                this.Hide();
+               // this.Hide();
             }
             else
             {
@@ -37,7 +37,21 @@ namespace InvenFacil
             {
                 Form1 form1 = new Form1();
                 form1.Show();
-                this.Hide();
+               // this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No posee permisos para este módulo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (Globales.GlobalVariables.GlobalPerfilActivo == 3)
+            {
+                ModuloConsultasForm form1 = new ModuloConsultasForm();
+                form1.Show();
+                //this.Hide();
             }
             else
             {

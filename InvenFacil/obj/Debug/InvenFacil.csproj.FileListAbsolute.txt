@@ -16,3 +16,4 @@ C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.pdb
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.LoginForm.resources
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.UsuariosForm.resources
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.MenuPrincipalForm.resources
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.ModuloConsultasForm.resources

@@ -111,6 +111,12 @@
       <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Methods.cs" />
+    <Compile Include="ModuloConsultasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloConsultasForm.Designer.cs">
+      <DependentUpon>ModuloConsultasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariosForm.cs">
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipalForm.resx">
       <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloConsultasForm.resx">
+      <DependentUpon>ModuloConsultasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,7 +170,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reportes\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DataBaseConnection\ModelInvenFacil.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -107,6 +107,7 @@
             this.BtReporte.TabIndex = 45;
             this.BtReporte.Text = "Reporte";
             this.BtReporte.UseVisualStyleBackColor = true;
+            this.BtReporte.Click += new System.EventHandler(this.BtReporte_Click);
             // 
             // BtFotoAriticulo
             // 
@@ -287,7 +288,7 @@
             this.BtRegistrarArt.Name = "BtRegistrarArt";
             this.BtRegistrarArt.Size = new System.Drawing.Size(227, 24);
             this.BtRegistrarArt.TabIndex = 60;
-            this.BtRegistrarArt.Text = "Registrar Nuevo";
+            this.BtRegistrarArt.Text = "Registrar Nuevo Artículo";
             this.BtRegistrarArt.UseVisualStyleBackColor = true;
             this.BtRegistrarArt.Click += new System.EventHandler(this.BtRegistrarArt_Click);
             // 

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalForm));
             this.BtModuloUsuarios = new System.Windows.Forms.Button();
             this.BtModuloAlmacen = new System.Windows.Forms.Button();
+            this.BtConsultas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtModuloUsuarios
@@ -53,12 +54,23 @@
             this.BtModuloAlmacen.UseVisualStyleBackColor = true;
             this.BtModuloAlmacen.Click += new System.EventHandler(this.BtModuloAlmacen_Click);
             // 
+            // BtConsultas
+            // 
+            this.BtConsultas.Location = new System.Drawing.Point(23, 131);
+            this.BtConsultas.Name = "BtConsultas";
+            this.BtConsultas.Size = new System.Drawing.Size(188, 23);
+            this.BtConsultas.TabIndex = 2;
+            this.BtConsultas.Text = "Solo consultas";
+            this.BtConsultas.UseVisualStyleBackColor = true;
+            this.BtConsultas.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(255, 163);
+            this.ClientSize = new System.Drawing.Size(255, 188);
+            this.Controls.Add(this.BtConsultas);
             this.Controls.Add(this.BtModuloAlmacen);
             this.Controls.Add(this.BtModuloUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.Button BtModuloUsuarios;
         private System.Windows.Forms.Button BtModuloAlmacen;
+        private System.Windows.Forms.Button BtConsultas;
     }
 }
