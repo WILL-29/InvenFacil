@@ -185,5 +185,40 @@ namespace InvenFacil
                 }            
             }
         }
+
+        private void BtRegistrarArt_Click(object sender, EventArgs e)
+        {
+            if (TbIdArticulo.Text != "")
+            {
+                MessageBox.Show("Actualmente tiene un registro seleccionado, antes de registrar uno nuevo presione el botón limpiar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (TbCantidad.Text.Any(x => !char.IsNumber(x)))
+                errorProvider1.SetError(TbCantidad, "Solo debe introducir números");
+            else if (TbNombreArticulo.Text == "" || CbTipoArticulo.Text == "" || CbMarca.Text == "" || TbModelo.Text == "" || TbSerial.Text == "" || PbArticulo.Image == null)
+            {
+                MessageBox.Show("Debe llenar todos los campos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var NueArt = new TblArticulo();
+
+                NueArt.NombreArticulo = TbNombreArticulo.Text;
+                NueArt.IdTipoArticulo = Convert.ToInt32(CbTipoArticulo.SelectedValue);
+                NueArt.IdMarca = Convert.ToInt32(CbMarca.SelectedValue);                
+                NueArt.Modelo = TbModelo.Text;
+                NueArt.Serial = TbSerial.Text;
+                NueArt.Cantidad = Convert.ToInt32(TbCantidad.Text);
+                if (RutaFotoArt != null)
+                { NueArt.Foto = File.ReadAllBytes(RutaFotoArt); }
+                
+                ////Esto falta programarlo aún
+                NueArt.IdUsuarioUltimaModificación = 7;
+
+                db.TblArticulos.Add(NueArt);
+                db.SaveChanges();
+                Limpiar(this);
+                MessageBox.Show("Nuevo artículo registrado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
     }
 }

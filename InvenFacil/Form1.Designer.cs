@@ -54,6 +54,7 @@
             this.TbModificadoPor = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtEliminarArt = new System.Windows.Forms.Button();
+            this.BtRegistrarArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -88,7 +89,7 @@
             // BtBuscar
             // 
             this.BtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtBuscar.Location = new System.Drawing.Point(262, 442);
+            this.BtBuscar.Location = new System.Drawing.Point(262, 439);
             this.BtBuscar.Name = "BtBuscar";
             this.BtBuscar.Size = new System.Drawing.Size(80, 24);
             this.BtBuscar.TabIndex = 46;
@@ -99,7 +100,7 @@
             // BtReporte
             // 
             this.BtReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtReporte.Location = new System.Drawing.Point(434, 442);
+            this.BtReporte.Location = new System.Drawing.Point(521, 439);
             this.BtReporte.Name = "BtReporte";
             this.BtReporte.Size = new System.Drawing.Size(80, 24);
             this.BtReporte.TabIndex = 45;
@@ -188,7 +189,7 @@
             // BtLimpiar
             // 
             this.BtLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtLimpiar.Location = new System.Drawing.Point(535, 442);
+            this.BtLimpiar.Location = new System.Drawing.Point(607, 439);
             this.BtLimpiar.Name = "BtLimpiar";
             this.BtLimpiar.Size = new System.Drawing.Size(80, 24);
             this.BtLimpiar.TabIndex = 34;
@@ -198,9 +199,9 @@
             // 
             // BtGuardarArticulo
             // 
-            this.BtGuardarArticulo.Location = new System.Drawing.Point(13, 442);
+            this.BtGuardarArticulo.Location = new System.Drawing.Point(348, 439);
             this.BtGuardarArticulo.Name = "BtGuardarArticulo";
-            this.BtGuardarArticulo.Size = new System.Drawing.Size(227, 24);
+            this.BtGuardarArticulo.Size = new System.Drawing.Size(81, 24);
             this.BtGuardarArticulo.TabIndex = 33;
             this.BtGuardarArticulo.Text = "Guardar";
             this.BtGuardarArticulo.UseVisualStyleBackColor = true;
@@ -278,7 +279,7 @@
             // BtEliminarArt
             // 
             this.BtEliminarArt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtEliminarArt.Location = new System.Drawing.Point(348, 442);
+            this.BtEliminarArt.Location = new System.Drawing.Point(435, 439);
             this.BtEliminarArt.Name = "BtEliminarArt";
             this.BtEliminarArt.Size = new System.Drawing.Size(80, 24);
             this.BtEliminarArt.TabIndex = 59;
@@ -286,12 +287,23 @@
             this.BtEliminarArt.UseVisualStyleBackColor = true;
             this.BtEliminarArt.Click += new System.EventHandler(this.BtEliminarArt_Click);
             // 
+            // BtRegistrarArt
+            // 
+            this.BtRegistrarArt.Location = new System.Drawing.Point(13, 439);
+            this.BtRegistrarArt.Name = "BtRegistrarArt";
+            this.BtRegistrarArt.Size = new System.Drawing.Size(227, 24);
+            this.BtRegistrarArt.TabIndex = 60;
+            this.BtRegistrarArt.Text = "Registrar Nuevo";
+            this.BtRegistrarArt.UseVisualStyleBackColor = true;
+            this.BtRegistrarArt.Click += new System.EventHandler(this.BtRegistrarArt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1103, 472);
+            this.Controls.Add(this.BtRegistrarArt);
             this.Controls.Add(this.BtEliminarArt);
             this.Controls.Add(this.TbModificadoPor);
             this.Controls.Add(this.LbModificadoPor);
@@ -353,6 +365,7 @@
         private System.Windows.Forms.TextBox TbModificadoPor;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button BtEliminarArt;
+        private System.Windows.Forms.Button BtRegistrarArt;
     }
 }
 
