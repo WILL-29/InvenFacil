@@ -30,8 +30,8 @@ namespace InvenFacil
                 Globales.GlobalVariables.GlobalUsuarioActivo = UsuarioActivo.IdUsuario;
                 Globales.GlobalVariables.GlobalPerfilActivo = Convert.ToInt32(UsuarioActivo.IdPerfil);
                 
-                Form1 form1 = new Form1();
-                form1.Show();
+                MenuPrincipalForm mpf = new MenuPrincipalForm();
+                mpf.Show();
 
                 this.Hide();
             }

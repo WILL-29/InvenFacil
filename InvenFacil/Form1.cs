@@ -26,7 +26,9 @@ namespace InvenFacil
         //Variables globales y objetos que se usarán varias veces
         InvenFacilEntities db = new InvenFacilEntities();
         string RutaFotoArt;
-        int UsuarioActivo;
+        //int UsuarioActivo = 1; 
+        //UsuarioActivo = Globales.GlobalVariables.GlobalUsuarioActivo;
+                        
 
         // Llenar Comboboxes artículos
         private void LlenarComboBoxesArticulo()
@@ -129,7 +131,7 @@ namespace InvenFacil
                     Edita.Cantidad = Convert.ToInt32(TbCantidad.Text);                    
                     if (RutaFotoArt != null)
                     { Edita.Foto = File.ReadAllBytes(RutaFotoArt); }
-                    Edita.IdUsuarioUltimaModificación = UsuarioActivo;
+                    Edita.IdUsuarioUltimaModificación = Globales.GlobalVariables.GlobalUsuarioActivo;
                     db.SaveChanges();
                     Limpiar(this);
                     MessageBox.Show("Cambios realizados correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -221,7 +223,7 @@ namespace InvenFacil
                 NueArt.Cantidad = Convert.ToInt32(TbCantidad.Text);
                 if (RutaFotoArt != null)
                 { NueArt.Foto = File.ReadAllBytes(RutaFotoArt); }                                
-                NueArt.IdUsuarioUltimaModificación = UsuarioActivo;
+                NueArt.IdUsuarioUltimaModificación = Globales.GlobalVariables.GlobalUsuarioActivo;
                 db.TblArticulos.Add(NueArt);
                 db.SaveChanges();
                 Limpiar(this);
