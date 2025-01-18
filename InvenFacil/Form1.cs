@@ -26,6 +26,7 @@ namespace InvenFacil
         //Variables globales y objetos que se usarán varias veces
         InvenFacilEntities db = new InvenFacilEntities();
         string RutaFotoArt;
+        int UsuarioActivo;
 
         // Llenar Comboboxes artículos
         private void LlenarComboBoxesArticulo()
@@ -44,6 +45,13 @@ namespace InvenFacil
                 CbMarca.DataSource = Marcas;
                 CbMarca.DisplayMember = "Marca"; // Campo que deseas mostrar
                 CbMarca.ValueMember = "IdMarca"; // Campo que deseas usar como valor interno          
+
+                var ModificadoPor = db.TblUsuarios
+                                      .Select(m => new { m.IdUsuario, m.NombreCompleto })
+                                      .ToList();
+                CbModificado.DataSource = ModificadoPor;
+                CbModificado.DisplayMember = "NombreCompleto"; // Campo que deseas mostrar
+                CbModificado.ValueMember = "IdUsuario"; // Campo que deseas usar como valor interno          
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -64,7 +72,8 @@ namespace InvenFacil
                 TbModelo.Text = dataGridView1.Rows[n].Cells[4].Value.ToString();
                 TbSerial.Text = dataGridView1.Rows[n].Cells[5].Value.ToString();               
                 TbCantidad.Text = dataGridView1.Rows[n].Cells[6].Value.ToString();
-                TbModificadoPor.Text = dataGridView1.Rows[n].Cells[8].Value.ToString();
+                CbModificado.SelectedValue = Convert.ToInt32(dataGridView1.Rows[n].Cells[8].Value);
+                //TbModificadoPor.Text = dataGridView1.Rows[n].Cells[8].Value.ToString();
 
                 if (dataGridView1.Rows[n].Cells[7].Value != null)
                 {
@@ -75,7 +84,8 @@ namespace InvenFacil
                 else
                 {
                     PbArticulo.Image = null;
-                }                
+                }     
+                
             }
         }
 
@@ -119,6 +129,7 @@ namespace InvenFacil
                     Edita.Cantidad = Convert.ToInt32(TbCantidad.Text);                    
                     if (RutaFotoArt != null)
                     { Edita.Foto = File.ReadAllBytes(RutaFotoArt); }
+                    Edita.IdUsuarioUltimaModificación = UsuarioActivo;
                     db.SaveChanges();
                     Limpiar(this);
                     MessageBox.Show("Cambios realizados correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -209,11 +220,8 @@ namespace InvenFacil
                 NueArt.Serial = TbSerial.Text;
                 NueArt.Cantidad = Convert.ToInt32(TbCantidad.Text);
                 if (RutaFotoArt != null)
-                { NueArt.Foto = File.ReadAllBytes(RutaFotoArt); }
-                
-                ////Esto falta programarlo aún
-                NueArt.IdUsuarioUltimaModificación = 7;
-
+                { NueArt.Foto = File.ReadAllBytes(RutaFotoArt); }                                
+                NueArt.IdUsuarioUltimaModificación = UsuarioActivo;
                 db.TblArticulos.Add(NueArt);
                 db.SaveChanges();
                 Limpiar(this);

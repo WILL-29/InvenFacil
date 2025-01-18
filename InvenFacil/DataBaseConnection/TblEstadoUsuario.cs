@@ -14,16 +14,7 @@ namespace InvenFacil.DataBaseConnection
     
     public partial class TblEstadoUsuario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblEstadoUsuario()
-        {
-            this.TblUsuarios = new HashSet<TblUsuario>();
-        }
-    
         public int IdEstado { get; set; }
         public string Estado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblUsuario> TblUsuarios { get; set; }
     }
 }

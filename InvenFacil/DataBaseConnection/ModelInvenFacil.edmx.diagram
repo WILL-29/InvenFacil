@@ -6,8 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="7810c4fc145a48318109fc8b4c16af4a" Name="Diagram1">
         <EntityTypeShape EntityType="InvenFacilModel.TblArticulo" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="InvenFacilModel.TblAuditoria" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="InvenFacilModel.TblEstadoUsuario" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InvenFacilModel.TblAuditoria" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="InvenFacilModel.TblMarca" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InvenFacilModel.TblPerfile" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="InvenFacilModel.TblTipoArticulo" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
@@ -17,8 +16,8 @@
         <AssociationConnector Association="InvenFacilModel.FK_TblArticulos_TblUsuarios" ManuallyRouted="false" />
         <AssociationConnector Association="InvenFacilModel.FK__TblAudito__IdEmp__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="InvenFacilModel.FK__TblAudito__IdEmp__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="InvenFacilModel.FK__TblEmplea__IdEst__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="InvenFacilModel.FK__TblEmplea__IdPer__48CFD27E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="InvenFacilModel.TblEstadoUsuario" Width="1.875" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.TbModelo = new System.Windows.Forms.TextBox();
             this.LbModelo = new System.Windows.Forms.Label();
             this.LbMarca = new System.Windows.Forms.Label();
@@ -51,10 +52,10 @@
             this.CbTipoArticulo = new System.Windows.Forms.ComboBox();
             this.CbMarca = new System.Windows.Forms.ComboBox();
             this.LbModificadoPor = new System.Windows.Forms.Label();
-            this.TbModificadoPor = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BtEliminarArt = new System.Windows.Forms.Button();
             this.BtRegistrarArt = new System.Windows.Forms.Button();
+            this.CbModificado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -199,6 +200,7 @@
             // 
             // BtGuardarArticulo
             // 
+            this.BtGuardarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtGuardarArticulo.Location = new System.Drawing.Point(348, 439);
             this.BtGuardarArticulo.Name = "BtGuardarArticulo";
             this.BtGuardarArticulo.Size = new System.Drawing.Size(81, 24);
@@ -264,14 +266,6 @@
             this.LbModificadoPor.TabIndex = 57;
             this.LbModificadoPor.Text = "Modificado Por";
             // 
-            // TbModificadoPor
-            // 
-            this.TbModificadoPor.Location = new System.Drawing.Point(110, 195);
-            this.TbModificadoPor.Name = "TbModificadoPor";
-            this.TbModificadoPor.ReadOnly = true;
-            this.TbModificadoPor.Size = new System.Drawing.Size(130, 20);
-            this.TbModificadoPor.TabIndex = 58;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -297,15 +291,24 @@
             this.BtRegistrarArt.UseVisualStyleBackColor = true;
             this.BtRegistrarArt.Click += new System.EventHandler(this.BtRegistrarArt_Click);
             // 
+            // CbModificado
+            // 
+            this.CbModificado.Enabled = false;
+            this.CbModificado.FormattingEnabled = true;
+            this.CbModificado.Location = new System.Drawing.Point(110, 195);
+            this.CbModificado.Name = "CbModificado";
+            this.CbModificado.Size = new System.Drawing.Size(130, 21);
+            this.CbModificado.TabIndex = 61;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1103, 472);
+            this.Controls.Add(this.CbModificado);
             this.Controls.Add(this.BtRegistrarArt);
             this.Controls.Add(this.BtEliminarArt);
-            this.Controls.Add(this.TbModificadoPor);
             this.Controls.Add(this.LbModificadoPor);
             this.Controls.Add(this.CbMarca);
             this.Controls.Add(this.CbTipoArticulo);
@@ -328,6 +331,7 @@
             this.Controls.Add(this.BtLimpiar);
             this.Controls.Add(this.BtGuardarArticulo);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "InvenFacil - Inventario";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -362,10 +366,10 @@
         private System.Windows.Forms.ComboBox CbTipoArticulo;
         private System.Windows.Forms.ComboBox CbMarca;
         private System.Windows.Forms.Label LbModificadoPor;
-        private System.Windows.Forms.TextBox TbModificadoPor;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button BtEliminarArt;
         private System.Windows.Forms.Button BtRegistrarArt;
+        private System.Windows.Forms.ComboBox CbModificado;
     }
 }
 

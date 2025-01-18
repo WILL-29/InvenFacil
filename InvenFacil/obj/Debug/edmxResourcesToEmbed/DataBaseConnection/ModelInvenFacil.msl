@@ -27,14 +27,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TblEstadoUsuarios">
-      <EntityTypeMapping TypeName="InvenFacilModel.TblEstadoUsuario">
-        <MappingFragment StoreEntitySet="TblEstadoUsuarios">
-          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TblMarcas">
       <EntityTypeMapping TypeName="InvenFacilModel.TblMarca">
         <MappingFragment StoreEntitySet="TblMarcas">
@@ -62,15 +54,22 @@
     <EntitySetMapping Name="TblUsuarios">
       <EntityTypeMapping TypeName="InvenFacilModel.TblUsuario">
         <MappingFragment StoreEntitySet="TblUsuarios">
+          <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
           <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
           <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
           <ScalarProperty Name="FechaExpiracionPassword" ColumnName="FechaExpiracionPassword" />
           <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblEstadoUsuarios">
+      <EntityTypeMapping TypeName="InvenFacilModel.TblEstadoUsuario">
+        <MappingFragment StoreEntitySet="TblEstadoUsuario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

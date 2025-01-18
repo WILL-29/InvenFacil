@@ -25,12 +25,11 @@ namespace InvenFacil.DataBaseConnection
         public int IdUsuario { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public Nullable<int> IdPerfil { get; set; }
         public Nullable<int> IdEstado { get; set; }
         public Nullable<System.DateTime> FechaExpiracionPassword { get; set; }
         public Nullable<System.DateTime> FechaRegistro { get; set; }
+        public string NombreCompleto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblArticulo> TblArticulos { get; set; }
@@ -38,7 +37,6 @@ namespace InvenFacil.DataBaseConnection
         public virtual ICollection<TblAuditoria> TblAuditorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblAuditoria> TblAuditorias1 { get; set; }
-        public virtual TblEstadoUsuario TblEstadoUsuario { get; set; }
         public virtual TblPerfile TblPerfile { get; set; }
     }
 }

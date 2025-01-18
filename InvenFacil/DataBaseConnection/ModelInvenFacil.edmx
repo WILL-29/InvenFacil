@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InvenFacilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="InvenFacilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblArticulos">
           <Key>
             <PropertyRef Name="IdArticulo" />
@@ -29,12 +29,12 @@
           <Property Name="AccionRealizada" Type="nvarchar" MaxLength="150" />
           <Property Name="IdEmpleadoAfectado" Type="int" />
         </EntityType>
-        <EntityType Name="TblEstadoUsuarios">
+        <EntityType Name="TblEstadoUsuario">
           <Key>
             <PropertyRef Name="IdEstado" />
           </Key>
           <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TblMarcas">
           <Key>
@@ -64,8 +64,7 @@
           <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="50" />
           <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" />
+          <Property Name="NombreCompleto" Type="varchar" MaxLength="50" />
           <Property Name="IdPerfil" Type="int" />
           <Property Name="IdEstado" Type="int" />
           <Property Name="FechaExpiracionPassword" Type="datetime" />
@@ -119,18 +118,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TblEmplea__IdEst__49C3F6B7">
-          <End Role="TblEstadoUsuarios" Type="Self.TblEstadoUsuarios" Multiplicity="0..1" />
-          <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblEstadoUsuarios">
-              <PropertyRef Name="IdEstado" />
-            </Principal>
-            <Dependent Role="TblUsuarios">
-              <PropertyRef Name="IdEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TblEmplea__IdPer__48CFD27E">
           <End Role="TblPerfiles" Type="Self.TblPerfiles" Multiplicity="0..1" />
           <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
@@ -158,7 +145,7 @@
         <EntityContainer Name="InvenFacilModelStoreContainer">
           <EntitySet Name="TblArticulos" EntityType="Self.TblArticulos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAuditoria" EntityType="Self.TblAuditoria" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TblEstadoUsuarios" EntityType="Self.TblEstadoUsuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblEstadoUsuario" EntityType="Self.TblEstadoUsuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblMarcas" EntityType="Self.TblMarcas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblPerfiles" EntityType="Self.TblPerfiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTipoArticulo" EntityType="Self.TblTipoArticulo" Schema="dbo" store:Type="Tables" />
@@ -179,10 +166,6 @@
             <End Role="TblUsuarios" EntitySet="TblUsuarios" />
             <End Role="TblAuditoria" EntitySet="TblAuditoria" />
           </AssociationSet>
-          <AssociationSet Name="FK__TblEmplea__IdEst__49C3F6B7" Association="Self.FK__TblEmplea__IdEst__49C3F6B7">
-            <End Role="TblEstadoUsuarios" EntitySet="TblEstadoUsuarios" />
-            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
-          </AssociationSet>
           <AssociationSet Name="FK__TblEmplea__IdPer__48CFD27E" Association="Self.FK__TblEmplea__IdPer__48CFD27E">
             <End Role="TblPerfiles" EntitySet="TblPerfiles" />
             <End Role="TblUsuarios" EntitySet="TblUsuarios" />
@@ -192,8 +175,7 @@
             <End Role="TblArticulos" EntitySet="TblArticulos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InvenFacilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -226,14 +208,6 @@
           <NavigationProperty Name="TblUsuario" Relationship="Self.FK__TblAudito__IdEmp__4CA06362" FromRole="TblAuditoria" ToRole="TblUsuarios" />
           <NavigationProperty Name="TblUsuario1" Relationship="Self.FK__TblAudito__IdEmp__4E88ABD4" FromRole="TblAuditoria" ToRole="TblUsuarios" />
         </EntityType>
-        <EntityType Name="TblEstadoUsuario">
-          <Key>
-            <PropertyRef Name="IdEstado" />
-          </Key>
-          <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="TblUsuarios" Relationship="Self.FK__TblEmplea__IdEst__49C3F6B7" FromRole="TblEstadoUsuarios" ToRole="TblUsuarios" />
-        </EntityType>
         <EntityType Name="TblMarca">
           <Key>
             <PropertyRef Name="IdMarca" />
@@ -265,8 +239,6 @@
           <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IdPerfil" Type="Int32" />
           <Property Name="IdEstado" Type="Int32" />
           <Property Name="FechaExpiracionPassword" Type="DateTime" Precision="3" />
@@ -274,8 +246,8 @@
           <NavigationProperty Name="TblArticulos" Relationship="Self.FK_TblArticulos_TblUsuarios" FromRole="TblUsuarios" ToRole="TblArticulos" />
           <NavigationProperty Name="TblAuditorias" Relationship="Self.FK__TblAudito__IdEmp__4CA06362" FromRole="TblUsuarios" ToRole="TblAuditoria" />
           <NavigationProperty Name="TblAuditorias1" Relationship="Self.FK__TblAudito__IdEmp__4E88ABD4" FromRole="TblUsuarios" ToRole="TblAuditoria" />
-          <NavigationProperty Name="TblEstadoUsuario" Relationship="Self.FK__TblEmplea__IdEst__49C3F6B7" FromRole="TblUsuarios" ToRole="TblEstadoUsuarios" />
           <NavigationProperty Name="TblPerfile" Relationship="Self.FK__TblEmplea__IdPer__48CFD27E" FromRole="TblUsuarios" ToRole="TblPerfiles" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__TblArticu__IdMar__52593CB8">
           <End Role="TblMarcas" Type="Self.TblMarca" Multiplicity="0..1" />
@@ -337,18 +309,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TblEmplea__IdEst__49C3F6B7">
-          <End Role="TblEstadoUsuarios" Type="Self.TblEstadoUsuario" Multiplicity="0..1" />
-          <End Role="TblUsuarios" Type="Self.TblUsuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TblEstadoUsuarios">
-              <PropertyRef Name="IdEstado" />
-            </Principal>
-            <Dependent Role="TblUsuarios">
-              <PropertyRef Name="IdEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TblEmplea__IdPer__48CFD27E">
           <End Role="TblPerfiles" Type="Self.TblPerfile" Multiplicity="0..1" />
           <End Role="TblUsuarios" Type="Self.TblUsuario" Multiplicity="*" />
@@ -364,7 +324,6 @@
         <EntityContainer Name="InvenFacilEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblArticulos" EntityType="Self.TblArticulo" />
           <EntitySet Name="TblAuditorias" EntityType="Self.TblAuditoria" />
-          <EntitySet Name="TblEstadoUsuarios" EntityType="Self.TblEstadoUsuario" />
           <EntitySet Name="TblMarcas" EntityType="Self.TblMarca" />
           <EntitySet Name="TblPerfiles" EntityType="Self.TblPerfile" />
           <EntitySet Name="TblTipoArticuloes" EntityType="Self.TblTipoArticulo" />
@@ -389,15 +348,19 @@
             <End Role="TblUsuarios" EntitySet="TblUsuarios" />
             <End Role="TblAuditoria" EntitySet="TblAuditorias" />
           </AssociationSet>
-          <AssociationSet Name="FK__TblEmplea__IdEst__49C3F6B7" Association="Self.FK__TblEmplea__IdEst__49C3F6B7">
-            <End Role="TblEstadoUsuarios" EntitySet="TblEstadoUsuarios" />
-            <End Role="TblUsuarios" EntitySet="TblUsuarios" />
-          </AssociationSet>
           <AssociationSet Name="FK__TblEmplea__IdPer__48CFD27E" Association="Self.FK__TblEmplea__IdPer__48CFD27E">
             <End Role="TblPerfiles" EntitySet="TblPerfiles" />
             <End Role="TblUsuarios" EntitySet="TblUsuarios" />
           </AssociationSet>
+          <EntitySet Name="TblEstadoUsuarios" EntityType="InvenFacilModel.TblEstadoUsuario" />
         </EntityContainer>
+        <EntityType Name="TblEstadoUsuario">
+          <Key>
+            <PropertyRef Name="IdEstado" />
+          </Key>
+          <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -430,14 +393,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TblEstadoUsuarios">
-            <EntityTypeMapping TypeName="InvenFacilModel.TblEstadoUsuario">
-              <MappingFragment StoreEntitySet="TblEstadoUsuarios">
-                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TblMarcas">
             <EntityTypeMapping TypeName="InvenFacilModel.TblMarca">
               <MappingFragment StoreEntitySet="TblMarcas">
@@ -465,15 +420,22 @@
           <EntitySetMapping Name="TblUsuarios">
             <EntityTypeMapping TypeName="InvenFacilModel.TblUsuario">
               <MappingFragment StoreEntitySet="TblUsuarios">
+                <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
                 <ScalarProperty Name="FechaExpiracionPassword" ColumnName="FechaExpiracionPassword" />
                 <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEstadoUsuarios">
+            <EntityTypeMapping TypeName="InvenFacilModel.TblEstadoUsuario">
+              <MappingFragment StoreEntitySet="TblEstadoUsuario">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

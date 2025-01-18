@@ -13,3 +13,5 @@ C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csproj
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.csproj.CopyComplete
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.exe
 C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.pdb
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.LoginForm.resources
+C:\Users\WILL\Desktop\Sunshine\InvenFacil\InvenFacil\obj\Debug\InvenFacil.UsuariosForm.resources

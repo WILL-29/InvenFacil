@@ -24,12 +24,12 @@
     <Property Name="AccionRealizada" Type="nvarchar" MaxLength="150" />
     <Property Name="IdEmpleadoAfectado" Type="int" />
   </EntityType>
-  <EntityType Name="TblEstadoUsuarios">
+  <EntityType Name="TblEstadoUsuario">
     <Key>
       <PropertyRef Name="IdEstado" />
     </Key>
     <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Estado" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TblMarcas">
     <Key>
@@ -59,8 +59,7 @@
     <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="varchar" MaxLength="50" />
     <Property Name="Password" Type="varchar" MaxLength="50" />
-    <Property Name="Nombre" Type="varchar" MaxLength="50" />
-    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="NombreCompleto" Type="varchar" MaxLength="50" />
     <Property Name="IdPerfil" Type="int" />
     <Property Name="IdEstado" Type="int" />
     <Property Name="FechaExpiracionPassword" Type="datetime" />
@@ -114,18 +113,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TblEmplea__IdEst__49C3F6B7">
-    <End Role="TblEstadoUsuarios" Type="Self.TblEstadoUsuarios" Multiplicity="0..1" />
-    <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TblEstadoUsuarios">
-        <PropertyRef Name="IdEstado" />
-      </Principal>
-      <Dependent Role="TblUsuarios">
-        <PropertyRef Name="IdEstado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__TblEmplea__IdPer__48CFD27E">
     <End Role="TblPerfiles" Type="Self.TblPerfiles" Multiplicity="0..1" />
     <End Role="TblUsuarios" Type="Self.TblUsuarios" Multiplicity="*" />
@@ -153,7 +140,7 @@
   <EntityContainer Name="InvenFacilModelStoreContainer">
     <EntitySet Name="TblArticulos" EntityType="Self.TblArticulos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblAuditoria" EntityType="Self.TblAuditoria" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TblEstadoUsuarios" EntityType="Self.TblEstadoUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEstadoUsuario" EntityType="Self.TblEstadoUsuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblMarcas" EntityType="Self.TblMarcas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblPerfiles" EntityType="Self.TblPerfiles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblTipoArticulo" EntityType="Self.TblTipoArticulo" Schema="dbo" store:Type="Tables" />
@@ -173,10 +160,6 @@
     <AssociationSet Name="FK__TblAudito__IdEmp__4E88ABD4" Association="Self.FK__TblAudito__IdEmp__4E88ABD4">
       <End Role="TblUsuarios" EntitySet="TblUsuarios" />
       <End Role="TblAuditoria" EntitySet="TblAuditoria" />
-    </AssociationSet>
-    <AssociationSet Name="FK__TblEmplea__IdEst__49C3F6B7" Association="Self.FK__TblEmplea__IdEst__49C3F6B7">
-      <End Role="TblEstadoUsuarios" EntitySet="TblEstadoUsuarios" />
-      <End Role="TblUsuarios" EntitySet="TblUsuarios" />
     </AssociationSet>
     <AssociationSet Name="FK__TblEmplea__IdPer__48CFD27E" Association="Self.FK__TblEmplea__IdPer__48CFD27E">
       <End Role="TblPerfiles" EntitySet="TblPerfiles" />

@@ -27,10 +27,10 @@ namespace InvenFacil.DataBaseConnection
     
         public virtual DbSet<TblArticulo> TblArticulos { get; set; }
         public virtual DbSet<TblAuditoria> TblAuditorias { get; set; }
-        public virtual DbSet<TblEstadoUsuario> TblEstadoUsuarios { get; set; }
         public virtual DbSet<TblMarca> TblMarcas { get; set; }
         public virtual DbSet<TblPerfile> TblPerfiles { get; set; }
         public virtual DbSet<TblTipoArticulo> TblTipoArticuloes { get; set; }
         public virtual DbSet<TblUsuario> TblUsuarios { get; set; }
+        public virtual DbSet<TblEstadoUsuario> TblEstadoUsuarios { get; set; }
     }
 }
