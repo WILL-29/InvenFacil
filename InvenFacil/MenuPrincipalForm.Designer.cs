@@ -32,6 +32,7 @@
             this.BtModuloUsuarios = new System.Windows.Forms.Button();
             this.BtModuloAlmacen = new System.Windows.Forms.Button();
             this.BtConsultas = new System.Windows.Forms.Button();
+            this.BtConsultaAuditoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtModuloUsuarios
@@ -64,12 +65,22 @@
             this.BtConsultas.UseVisualStyleBackColor = true;
             this.BtConsultas.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // BtConsultaAuditoria
+            // 
+            this.BtConsultaAuditoria.Location = new System.Drawing.Point(23, 185);
+            this.BtConsultaAuditoria.Name = "BtConsultaAuditoria";
+            this.BtConsultaAuditoria.Size = new System.Drawing.Size(188, 23);
+            this.BtConsultaAuditoria.TabIndex = 4;
+            this.BtConsultaAuditoria.Text = "Reporte de Auditoría";
+            this.BtConsultaAuditoria.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(255, 188);
+            this.ClientSize = new System.Drawing.Size(255, 235);
+            this.Controls.Add(this.BtConsultaAuditoria);
             this.Controls.Add(this.BtConsultas);
             this.Controls.Add(this.BtModuloAlmacen);
             this.Controls.Add(this.BtModuloUsuarios);
@@ -85,5 +96,6 @@
         private System.Windows.Forms.Button BtModuloUsuarios;
         private System.Windows.Forms.Button BtModuloAlmacen;
         private System.Windows.Forms.Button BtConsultas;
+        private System.Windows.Forms.Button BtConsultaAuditoria;
     }
 }

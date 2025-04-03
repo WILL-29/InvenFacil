@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditoriasUsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditoriasUsuariosForm.Designer.cs">
+      <DependentUpon>AuditoriasUsuariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseConnection\ModelInvenFacil.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +131,9 @@
     <Compile Include="UsuariosForm.Designer.cs">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AuditoriasUsuariosForm.resx">
+      <DependentUpon>AuditoriasUsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
